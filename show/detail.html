@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<title>品牌详情</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<div style='display: none;'>
+<img src="picture/wapstat.php" width="0" height="0"/></div>
+<script type="text/javascript">
+        var docEl = document.documentElement,
+            //总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                //设置根字体大小
+                docEl.style.fontSize = 10 * (docEl.clientWidth / 320) + 'px';
+            };
+        //绑定浏览器缩放与加载时间
+        window.addEventListener(resizeEvt, recalc, false);
+        document.addEventListener('DOMContentLoaded', recalc, false);
+</script>
+<style>
+	.mengban,.ewm_mengban{position:fixed; width:100%; height:100%; top:0px; left:0px; text-align: center; z-index: 999;}
+	.mengban{z-index: 998; background:rgba(0,0,0,0.6);}
+	.comunicate_box,.code_box{position: relative; width:80%; margin:0px auto; background:#fff; border-radius:5px;}
+	.code_box{border-radius:10px;}
+	.comunicate_padding{padding:30px 5px 20px 5px;}
+	.comunicate_box a{display: inline-block; width:33.33%; float:left;}
+	.comunicate_box a img{min-width: 50px; max-width: 105px;  width:60%;}
+	.comunicate_box a p{margin-top:10px; font-size: 14px;}
+	.close_ewm{position: absolute; cursor:pointer; top:-10px; right:-10px; background:#000; color:#fff; width:30px; height:30px; line-height:30px; border-radius:15px; font-weight:bold;}
+	.close_mengban{position: absolute; cursor:pointer; top:-1px; right:-1px; color:#ccc; width:2rem; height:2rem; line-height:2rem; border-radius:15px;  font-size: 12px; font-family: 微软雅黑;}
+	.ewm{font-size:0px; border-radius: 10px 10px 0px 0px; overflow: hidden;}
+	.ewm img{width:100%;}
+	.ewm_ts{background:#fff; padding:0px 0px 10px; margin-top:10px; color:#ff0000;  border-radius: 0px 0px 10px 10px;}
+	.clean{clear:both;}
+	</style>
+</head>
+
+<body>
+	
+	<!--弹窗 开始-->
+	<div class="mengban" style="display:none; z-index: 1000 !important;">
+		<div class="comunicate_box">
+			<div class="comunicate_padding">
+				<div class="close_mengban"><img src="images/disclose.png"></div>
+				<a class="qq" href="http://wpa.qq.com/msgrd?V=3&uin=475583406&Site=QQ客服&Menu=yes">
+					<img src="picture/qq.png">
+					<p>QQ</p>
+				</a>				<a class="wechat" href="javascript:;">
+					<img src="picture/wechat.png">
+					<p>微信</p>
+				</a>				<a class="phone" href="tel:18868714992">
+					<img src="picture/tel.png">
+					<p>电话</p>
+				</a>				<div class="clean"></div>
+			</div>
+		</div>
+	</div>
+	<div class="ewm_mengban" style="display:none;">
+		<div class="code_box">
+			<div class="close_ewm">×</div>
+			<div class="ewm">
+				<img src="picture/57218333dc202.jpg"/>
+			</div>
+			<p class="ewm_ts">长按上方二维码3秒识别二维码</p>
+		</div>
+	</div>
+	<!--弹窗  结束-->
+	<header id="toolbar_header">
+		<div class="toolbar_back" tapmode="" onclick="javascript:history.go( - 1)"><i class="ico_back"></i></div>
+		<h1 class="toolbar_title">韩国杯具熊</h1>
+		<!--<div class="toolbar_right"><i class="ico_share"></i></div>-->
+	</header>
+	<div class="shopimg">
+		<img src="picture/568a4daad7489.jpg" class="simg posr">
+		<div class="shop_item goodbad" tapmode="" >
+			<img src="picture/5665507366b2a.jpg" alt="" class="brand_img">
+			<div class="shoptit" style="padding: 11px 95px 2px 50px;">
+				<i>韩国杯具熊</i>
+				<i class="shop_point">商铺评分:<font class="hint red">2.3分</font></i>
+				<!--            <p><em class="zan">818点赞</em><em class="ml10 keep">20万收藏</em></p>-->
+			</div>
+			<a href="http://mp.weixin.qq.com/s?__biz=MzA3NTIyMzA3Mw==&amp;mid=401921312&amp;idx=1&amp;sn=c6b8ac95834de06a19990340f74fa501#rd" class="saddbg_a"><div class="fr saddbg">进入店铺</div></a>		</div>
+	</div>
+	<style type="text/css">
+		.img_box{display: inline-block; width:33.33%; float:left;}
+		.img_pad{padding:2px;}
+		.img_box a{display: block; position: relative;}
+		.img_box img{width:100%;}
+		.show_img{width:100%; padding-bottom:100%; height:0px; background-position: center!important; background-size: cover !important;}
+		.img_box a p{width:100%; text-align: center; font-size: 14px; position: absolute; bottom:0px; left:0px; background: rgba(0,0,0,0.6); color:#fff; height:24px;line-height: 24px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+		.clean{clear:both;}
+		.set_item{position:relative;}
+		.set_item .teamtit{width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+		.shop_aptitude{width:100%; height:100px; background:#fff; overflow: scroll; position: relative;}
+		.aptitude_box img{width:100px; height:100px; float:left; margin-right:10px;}
+		.aptitude_box img:last-child{margin-right:0px;}
+		/*提示联系我们*/
+		.relative{position:relative;}
+		.foot_msg{z-index: 999;}
+		.comunicate_tips_box{position:fixed; top:0px; left:0px; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index: 998;}
+		.comunicate_tips{position:absolute; width:230px; bottom:70px; right:40px;}
+		.comunicate_tips span{color:#fff; font-size: 18px; font-weight: bold;}
+		.comunicate_tips img{width:38px; position: absolute;}
+	</style>
+	<div class="brief">简介：无代理费，代理➕微信 niupai，可一件代发</div> 
+	<div class="shop_aptitude" style="display:none;">
+		<div class="aptitude_box" id="aptitude_box">
+			<img src="" />
+			<img src="" />
+			<img src="" />
+			<img src="" />
+			<img src="" />
+			<img src="" />
+		</div>
+	</div>
+	<div class="shopbox bd">
+		<div class="img_box">
+				<div class="img_pad">
+					<a  href="detailone.html" >
+						<div class="show_img" style="background:url(picture/57349576ee0ab.jpeg);"></div>
+						<!-- <img src="picture/57349576ee0ab.jpeg" /> -->
+						<p>大号儿童水壶</p>
+					</a>
+				</div>
+			</div><div class="img_box">
+				<div class="img_pad">
+					<a  href="detailtwo.html" >
+						<div class="show_img" style="background:url(picture/57349478a4e6d.jpeg);"></div>
+						<!-- <img src="picture/57349478a4e6d.jpeg" /> -->
+						<p>杯具熊纯色保温杯，可以焖粥的美食神器！</p>
+					</a>
+				</div>
+			</div><div class="img_box">
+				<div class="img_pad">
+					<a  href="detail3.html" >
+						<div class="show_img" style="background:url(picture/573b398e1d31c.jpeg);"></div>
+						<!-- <img src="picture/573b398e1d31c.jpeg" /> -->
+						<p>杯具熊潮牌玻璃水杯</p>
+					</a>
+				</div>
+			</div>		<div class="clean"></div>
+	</div>
+<!-- <a  style="position:relative; display:block;" href="/hao/article/more.html?shop=3242" ><h2 class="mt20 publictit" >活动/新闻</h2>
+	<span style="position:absolute; right:10px; top:14px; font-size:14px; color:#ea5520;">更多</span></a> -->
+	<div class="firstblock">
+		<!-- <div class="set_item" tapmode="presshover" onclick="window.location.href = '/hao/article/info.html?id=12&shop=3242'">
+				<span>🌺如何加入？点这里，不需要任何费用！🌺</span>
+				<b class="item_arrow"></b>
+			</div> -->
+			<div class="h1"></div>	</div> 
+<a style="position:relative; display:block;" href="moreping.html" ><h2 class="mt20 publictit">评论</h2>
+			 <span style="position:absolute; right:10px; top:14px; font-size:14px; color:#ea5520;">更多</span></a>
+	<div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/5d67a984bbd74c4083b9bcd3031868ce.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>我是太阳 </i><em>2016-02-13 07:02 &nbsp;&nbsp;&nbsp;&nbsp;1楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_728" onclick="comment_thumbup('728')">124</em></span>
+			</div>
+			<div class="centmsg">
+				   我想做微商，这个需要怎么投资啊			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/739c29becc7b4f87a4b61f471c962ce5.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>咿哩哇啦</i><em>2016-01-11 11:01 &nbsp;&nbsp;&nbsp;&nbsp;2楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_282" onclick="comment_thumbup('282')">42</em></span>
+			</div>
+			<div class="centmsg">
+				很好，很喜欢			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/93cb37ca4285467499966510a141f414.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>千蕊人生承诺谁不会说</i><em>2016-03-03 14:03 &nbsp;&nbsp;&nbsp;&nbsp;3楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_1319" onclick="comment_thumbup('1319')">20</em></span>
+			</div>
+			<div class="centmsg">
+				很漂亮，			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/6ff22f4629dd4eed8fc02107f2a02267.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>PA.俏龄密码.口红琳宝^O^</i><em>2016-05-27 18:05 &nbsp;&nbsp;&nbsp;&nbsp;4楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5446" onclick="comment_thumbup('5446')">0</em></span>
+			</div>
+			<div class="centmsg">
+				杯子好好看，想给宝宝买一个			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/abc8e5deca0e46ac8ed787b88c34d822.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>晴空</i><em>2016-05-26 09:05 &nbsp;&nbsp;&nbsp;&nbsp;5楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5393" onclick="comment_thumbup('5393')">0</em></span>
+			</div>
+			<div class="centmsg">
+				这个杯子多少钱？			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/06b9f4f83f1343e3b48598393b515ac3.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>娜Νà </i><em>2016-05-25 23:05 &nbsp;&nbsp;&nbsp;&nbsp;6楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5384" onclick="comment_thumbup('5384')">0</em></span>
+			</div>
+			<div class="centmsg">
+				怎样代理呢呢呢～～～			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/a7d2303fe9cb49b5933ece429a32ba5b.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>A娟子精品货源批发总仓</i><em>2016-05-23 19:05 &nbsp;&nbsp;&nbsp;&nbsp;7楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5322" onclick="comment_thumbup('5322')">0</em></span>
+			</div>
+			<div class="centmsg">
+				杯子不错……			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/26ca83822ab2486ba128296dbf75e09f.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>雲霞</i><em>2016-05-22 22:05 &nbsp;&nbsp;&nbsp;&nbsp;8楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5288" onclick="comment_thumbup('5288')">4</em></span>
+			</div>
+			<div class="centmsg">
+				怎么做代理？			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/e6b1b03a2a7740d19ae2137d44795220.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>琴子</i><em>2016-05-21 20:05 &nbsp;&nbsp;&nbsp;&nbsp;9楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5246" onclick="comment_thumbup('5246')">0</em></span>
+			</div>
+			<div class="centmsg">
+				杯子很适用哦，既能保温，又能保冷，最好的是还可以焖粥哦，宝宝特别喜欢用!			</div>
+		</div><div class="bd">
+			<div class="set_item pt10">
+				<img src="picture/0d53bf72b19548b69e8f692841007fcd.gif" alt="" class="talent_img minimg">
+				<span class="blue teamtit"><i>小朵</i><em>2016-05-21 16:05 &nbsp;&nbsp;&nbsp;&nbsp;10楼</em></span>
+				<span class="fr hint shopzan" ><em class="zan" id="zan_5237" onclick="comment_thumbup('5237')">0</em></span>
+			</div>
+			<div class="centmsg">
+				怎么弄这个啊			</div>
+		</div><br />
+<br />
+<br />
+<div class="discus">
+	<div class="discus_con">
+		<div class="conmain">
+			<div class="conmain_title">评 论</div>
+			<textarea cols="10" rows="7" autofocus required></textarea>
+			<button class="disbtn">发表</button>
+		</div>
+		<span class="discus_close"><img src="images/disclose.png"></span>
+	</div>
+</div>
+<div class="foot_msg" style="display:none;">
+    <ul>
+        <li tapmode="presshover" onclick="shop_thumbup()" ><img src="picture/ping_zan_black.png" alt="" />点赞(<span id="zan" style="line-height:14px;">818</span>)</li>
+        <li tapmode="presshover">
+		   <a class="pinglun_show">
+			 <img src="picture/pig_interact_on.png" alt="" />评论(<span style="line-height:14px;">81</span>)
+		   </a>
+		</li>
+		<li tapmode="lgbtnhover" ><div class="pub_card send_msg"  style="height:auto; border-radius:0px;" type="button" tapmode="lgbtnhover">联系我吧</div></li>    </ul>
+</div>
+<script src='js/jweixin-1.0.0.js'></script>
+<script type="text/javascript">
+	var window_height = $(window).height();
+	var document_height = $(document).height();
+	//提示联系我们
+	var shopbox_mark;
+	shopbox_mark = 0;
+	var comunicate_tips = '<div class="comunicate_tips_box">'+
+								'<div class="comunicate_tips">'+
+									'<div class="relative">'+
+										'<span>对我们的产品感兴趣？</span>'+
+										'<img src="picture/arrow_down.gif">'+
+									'</div>'+
+								'</div>'+
+							'</div>';
+	if(window_height == document_height){
+		$("body").append(comunicate_tips);
+		shopbox_mark++;
+	};
+	$(window).scroll(function(){
+		var height = $(window).height()/4*3;
+		var offsetTop = $(".shopbox").offset().top;
+		var scrollTop = $(window).scrollTop()+height;
+		if(scrollTop>offsetTop){
+			if(!localStorage.getItem("like_show")){
+				if(shopbox_mark == 0){
+					$("body").append(comunicate_tips);
+					localStorage.setItem("like_show","1");
+					shopbox_mark++;
+				}
+			}
+		}
+		//localStorage.removeItem("like_show");
+	});
+	//关闭提示框
+	$(document).on("touchend",".comunicate_tips_box",function(){
+		$(".comunicate_tips_box").remove();
+	});
+
+	//根据连接数确定按钮的宽度
+	var link_num = $(".comunicate_box a").length;
+	var link_width = 100/link_num+"%";
+	$(".comunicate_box a").css("width",link_width);
+
+	//判断联系方式有几个，如果只有一个的话，则直接联系不弹窗
+	if(link_num == 1){
+		var link = $(".comunicate_box a").attr("href");
+		$(".send_msg").attr("href",link)
+	}
+	//蒙板的展示和关闭
+	var window_height = $(window).height();
+	$(".send_msg").bind("click",function(){
+		//不是一个连接的打开蒙板
+		if(link_num == 1){
+			var wechat_num = $(".wechat").length;
+			if(wechat_num !== 0){
+				$(".ewm_mengban").css("background","rgba(0,0,0,0.6)");
+				$(".wechat").click();
+			}
+		}else{
+			$(".mengban").show();
+			var comunicate_height = $(".comunicate_box").height();
+			$(".comunicate_box").css("top",(window_height - comunicate_height)/2);
+		}
+	});
+	$(".wechat").bind("click",function(){
+		$(".ewm_mengban").show();
+		var code_box_height = $(".code_box").height();
+		$(".code_box").css("top",(window_height - code_box_height)/2);
+		event.stopPropagation();
+	});
+	$(".close_mengban,.mengban").bind("click",function(){
+		$(".mengban").hide();
+	});
+	$(".close_ewm").bind("click",function(){
+		$(".ewm_mengban").hide();
+	});
+</script>
+<script type="text/javascript">
+			$(function(){
+				$(".foot_msg").show();
+			});
+			$(".pinglun_show").click(function(){
+				$(".discus").show();
+			});
+			$(".disbtn").click(function(){
+				$(".discus").hide();
+			});
+			$(".discus_close").click(function(){
+				$(".discus").hide();
+			});
+			//确定资质张数
+			var aptitude_num = $(".aptitude_box img").length;
+			var aptitude_width = $(".aptitude_box img").width() * aptitude_num + 10 * (aptitude_num - 1);
+			$(".aptitude_box").width(aptitude_width);
+			//按照图片张数来确定宽度
+			var shopimg_num = $(".shopbox .img_box").length;
+			if (shopimg_num == 1){
+				$(".img_box").width("100%");
+			} else if (shopimg_num == 4){
+				$(".img_box").width("50%");
+			};
+			// var img_height = $(".img_box").eq(0).width();
+			// $(".img_box img").height(img_height);
+					
+			//店铺点赞
+			 function shop_thumbup() {
+			// 		//店铺 ID
+			// 		var $sid = "3242";
+							var $zan = $('#zan').text();
+			// 				$.get("thumbup.html", {id: $sid}, function(data) {
+			// 					if (data.status == 1)
+			// 					{
+									$('#zan').text(parseInt($zan) + 1);
+			// 					}
+			// 					else
+			// 					{
+			// 						alert(data.info);
+			// 						if (data.url != '')
+			// 						{
+			// 							window.location.href = data.url;
+			// 						}
+			// 					}
+			// 				})
+						};
+			// //评论点赞
+			function comment_thumbup($id) {
+			// 	var $sid = "3242";
+				var $zan = $('#zan_' + $id).text();
+			// 	$.get("/hao/comment/thumbup.html", {cid: $id}, function(data) {
+			// 		if (data.status == 1)
+			// 		{
+					   $('#zan_' + $id).text(parseInt($zan) + 1);
+			// 		}
+			// 		else{
+			// 		   alert(data.info);
+			// 			if (data.url != '')
+			// 			{
+			// 				window.location.href = data.url;
+			// 			}
+			// 		}
+			// 	})
+			};
+					
+</script>
+<script>
+	
+		// wx.config({
+		// 	debug: false,
+		// 	appId: 'wxebceb73aaef188b5', 
+		// 	timestamp: 1464571749,
+		// 	nonceStr: 'ouEB1tRGGY7HzX2l', 
+		// 	signature: '01ec91333d00327414599ea804c3a744e9aac650',
+		// 	jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'] 
+		// });
+
+		// wx.ready(function(){
+		// 	var shareData = {
+		// 		title: "韩国杯具熊",
+		// 		desc: "无代理费，代理➕微信 niupai，可一件代发",
+		// 		link: window.location.href,
+		// 		imgUrl: "http://qun.weituobang.compicture/568a4daad7489.jpg",
+		// 		trigger: function (res) {
+		// 		  //alert('用户点击发送给朋友');
+		// 		},
+		// 		success: function (res) {
+		// 		  //alert('已分享');
+		// 		},
+		// 		cancel: function (res) {
+		// 		  //alert('已取消');
+		// 		},
+		// 		fail: function (res) {
+		// 		  //alert(JSON.stringify(res));
+		// 		}
+		// 	};
+		// 	wx.onMenuShareAppMessage(shareData);
+		// 	wx.onMenuShareTimeline(shareData);
+		// 	wx.onMenuShareQQ(shareData);
+		// 	wx.onMenuShareWeibo(shareData);
+		// });
+
+		// wx.error(function(res){
+		// 	alert('error');
+		// });
+	</script>
+            
+</body>
+</html>
